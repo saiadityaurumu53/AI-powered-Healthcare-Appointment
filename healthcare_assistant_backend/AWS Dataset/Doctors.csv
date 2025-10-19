@@ -1,0 +1,9 @@
+doctor_id,doctor_name,specialization,hospital_name,room_number,contact_number,email
+D-101,Dr. Emily Carter,Cardiology,Sunrise Medical Center,Room 201,+1-555-120-4567,emily.carter@sunrisemed.org
+D-102,Dr. Aisha Patel,Dermatology,Sunrise Medical Center,Room 305,+1-555-347-2211,aisha.patel@sunrisemed.org
+D-103,Dr. Robert Lin,Orthopedics,Sunrise Medical Center,Room 112,+1-555-834-7789,robert.lin@sunrisemed.org
+D-104,Dr. Sarah Johnson,Pediatrics,Sunrise Medical Center,Room 403,+1-555-667-1923,sarah.johnson@sunrisemed.org
+D-105,Dr. Carlos Martinez,Neurology,Sunrise Medical Center,Room 214,+1-555-298-3417,carlos.martinez@sunrisemed.org
+D-106,Dr. Hannah Kim,ENT,Sunrise Medical Center,Room 109,+1-555-731-5690,hannah.kim@sunrisemed.org
+D-107,Dr. Priya Mehta,Ophthalmology,Sunrise Medical Center,Room 307,+1-555-465-7782,priya.mehta@sunrisemed.org
+D-108,Dr. Daniel Brown,General Medicine,Sunrise Medical Center,Room 118,+1-555-890-2345,daniel.brown@sunrisemed.org

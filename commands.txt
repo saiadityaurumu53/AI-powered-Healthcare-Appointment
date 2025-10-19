@@ -1,0 +1,29 @@
+pip install --user flask boto3
+
+
+
+curl -X POST http://127.0.0.1:5000/chat  -H "Content-Type: application/json"  -d "{\"message\": \"Book an appointment with Dr. Lee tomorrow at 10 AM\"}"
+
+
+for listing all the claude models available:
+(base) PS C:\Users\saiad> aws bedrock list-foundation-models --region us-east-1 --query "modelSummaries[?contains(modelId, 'sonnet')].modelId"
+[
+    "anthropic.claude-sonnet-4-20250514-v1:0",
+    "anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "anthropic.claude-3-sonnet-20240229-v1:0:28k",
+    "anthropic.claude-3-sonnet-20240229-v1:0:200k",
+    "anthropic.claude-3-sonnet-20240229-v1:0",
+    "anthropic.claude-3-5-sonnet-20240620-v1:0",
+    "anthropic.claude-3-5-sonnet-20241022-v2:0",
+    "anthropic.claude-3-7-sonnet-20250219-v1:0"
+]
+
+(base) PS C:\Users\saiad>
+
+aws bedrock list-foundation-models --region us-east-1   --query "modelSummaries[?inferenceTypesSupported && contains(inferenceTypesSupported, 'ON_DEMAND')].{ID:modelId, Provider:providerName}"
+
+
+aws bedrock list-foundation-models --region us-east-1   --query "modelSummaries[?providerName=='Anthropic'].{Name:modelName, ID:modelId, Status:responseStreamingSupported}"
+
+
+aws bedrock list-foundation-models --region us-east-1   --query "modelSummaries[?providerName=='Anthropic'].{Name:modelName, Inference:inferenceTypesSupported}"
