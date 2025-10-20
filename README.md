@@ -1,36 +1,22 @@
-# 🌅 Sunrise Medical AI Appointment Assistant
+## Sunrise Medical AI Appointment Assistant
 
 An AI-powered healthcare web application that helps patients **book, cancel, or check doctor appointments** through natural conversation.  
 Built for the **AWS AI Agent Global Hackathon 2025**.
 
 ---
 
-## 🧭 Overview
+## Overview
 
 **Sunrise Medical Center’s AI Appointment Assistant** combines conversational AI with real-time hospital scheduling to deliver an accessible digital healthcare experience.  
 Patients can chat naturally to schedule appointments, view available doctors, and receive SMS / email notifications for confirmations and reminders.
 
 ---
 
-## 🏗️ Architecture
+## Architecture Diagram
 
-```
-🌐 Next.js (ShadCN UI)  →  Flask Backend (API)
-                                   │
-                                   ▼
-                       🤖 Amazon Bedrock (Claude 3.5 / Haiku / Titan)
-                                   │
-                 ┌─────────────────┴─────────────────┐
-                 ▼                                   ▼
-         🗃️ DynamoDB (Tables: Doctors, Appointments)   🔔 SNS (Email + SMS)
-                                   │
-                                   ▼
-                     ⏰ EventBridge + Lambda (Reminders)
-```
+![alt text](<AWS AI Agent Hackathon.jpg>)
 
----
-
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Layer | Technology / Service | Purpose |
 |-------|----------------------|----------|
@@ -39,25 +25,22 @@ Patients can chat naturally to schedule appointments, view available doctors, an
 | **AI Model** | **Amazon Bedrock (Claude 3.5 Sonnet, Haiku, Titan Text)** | Intent extraction + conversation |
 | **Database** | **Amazon DynamoDB** | Stores doctor and appointment records |
 | **Notifications** | **Amazon SNS** | Sends appointment confirmations via email & SMS |
-| **Scheduling** | **Amazon EventBridge + Lambda** | Sends reminder notifications |
 | **Security / Config** | **IAM Roles**, AWS Secrets Manager / .env | Secure credential management |
 | **Hosting (optional)** | **EC2 / Elastic Beanstalk / Amplify** | Backend & frontend deployment |
 
 ---
 
-## 🚀 Features
+## Features
 
-✅ Conversational AI Chat (Amazon Bedrock)  
-✅ Doctor Directory (DynamoDB)  
-✅ One-click Appointment Booking  
-✅ SMS + Email Alerts (Amazon SNS)  
-✅ Automated Reminders (EventBridge + Lambda)  
-✅ Accessible Design (voice assist ready)  
-✅ Scalable & Serverless AWS Architecture
+1. Conversational AI Chat (Amazon Bedrock)  
+2. Doctor Directory (DynamoDB)  
+3. One-click Appointment Booking  
+4. SMS + Email Alerts (Amazon SNS)  
+5. Scalable & Serverless AWS Architecture
 
 ---
 
-## 🩺 API Endpoints (Flask Backend)
+## API Endpoints (Flask Backend)
 
 | Endpoint | Method | Description |
 |-----------|---------|-------------|
@@ -79,7 +62,7 @@ Patients can chat naturally to schedule appointments, view available doctors, an
 
 ---
 
-## 🧠 AWS AI Model Strategy
+## AWS AI Model Strategy
 
 | Priority | Model | Use Case |
 |-----------|--------|----------|
@@ -94,7 +77,6 @@ Patients can chat naturally to schedule appointments, view available doctors, an
 1. Appointment confirmed → Flask calls `send_email_notification()` and `send_sms_notification()`  
 2. SNS Topic (`appointment_notifications`) broadcasts email to subscribers  
 3. Direct SMS sent to verified patient number  
-4. EventBridge + Lambda can trigger reminders 24 h or 2 h before appointments
 
 ---
 
@@ -125,15 +107,14 @@ Patients can chat naturally to schedule appointments, view available doctors, an
 
 ---
 
-## ⚙️ Local Setup
+### 1. Clone the Repository
 
-### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/<your-username>/sunrise-medical-assistant.git
 cd sunrise-medical-assistant
 ```
 
-### 2️⃣ Backend Setup
+### 2. Backend Setup
 ```bash
 cd healthcare_assistant_backend
 python3 -m venv venv
@@ -155,41 +136,14 @@ Run Flask:
 python app.py
 ```
 
-### 3️⃣ Frontend Setup
+### 3.  Frontend Setup
 ```bash
+cd sunrise-medical-portal
 cd healthcare-portal
 npm install
 npm run dev
 ```
 Visit → `http://localhost:3000`
-
----
-
-## 🧩 Directory Structure
-
-```
-healthcare_assistant_backend/
-│
-├── app.py                        # Flask main entry
-├── services/
-│   ├── bedrock_service.py        # Bedrock intent & conversation
-│   ├── doctors_service.py        # DynamoDB Doctors CRUD
-│   ├── dynamodb_service.py       # Appointments book/cancel/list
-│   ├── sns_service.py            # SNS email/SMS notifications
-│
-└── requirements.txt
-
-healthcare-portal/                # Next.js Frontend
-│
-├── src/app/
-│   ├── page.tsx                  # Home Page
-│   ├── doctors/page.tsx          # View Doctors
-│   ├── chat/page.tsx             # Chat Assistant
-│
-└── components/
-    ├── DoctorCard.tsx
-    └── ui/ (button, card, etc.)
-```
 
 ---
 
@@ -231,15 +185,6 @@ healthcare-portal/                # Next.js Frontend
 
 ---
 
-## 🏆 Hackathon Highlights
-
-- **Category:** Accessible Help Companion / Healthcare AI  
-- **Team:** Sai Aditya Urumu & Monika  
-- **LLM:** Amazon Bedrock Claude 3.5 Sonnet with multi-model fallbacks  
-- **Budget Control:** $100 AWS Credit limit policy  
-- **Demo Goal:** Accessible AI appointment service with voice and language support
-
----
 
 ## 📄 License
 This project is licensed under the **MIT License** — feel free to use, modify, and build upon it.
@@ -251,9 +196,3 @@ Built for the **AWS AI Agent Global Hackathon 2025**.
 Thanks to **Amazon Bedrock**, **DynamoDB**, and **SNS** for powering this accessible AI healthcare experience.
 
 ---
-
-## 🖼️ Architecture Diagram
-
-```markdown
-![alt text](image.png)
-```
