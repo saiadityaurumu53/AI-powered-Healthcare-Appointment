@@ -27,3 +27,7 @@ aws bedrock list-foundation-models --region us-east-1   --query "modelSummaries[
 
 
 aws bedrock list-foundation-models --region us-east-1   --query "modelSummaries[?providerName=='Anthropic'].{Name:modelName, Inference:inferenceTypesSupported}"
+
+
+
+https://ai-powered-healthcare-appointment.onrender.com
