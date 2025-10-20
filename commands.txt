@@ -31,3 +31,4 @@ aws bedrock list-foundation-models --region us-east-1   --query "modelSummaries[
 
 
 https://ai-powered-healthcare-appointment.onrender.com
+ai-powered-healthcare-appointment.vercel.app

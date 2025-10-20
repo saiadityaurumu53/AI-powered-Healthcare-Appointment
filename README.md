@@ -160,7 +160,7 @@ Visit → `http://localhost:3000`
 
 ---
 
-### 👩‍💻 Monika  
+### 👩‍💻 Monika Gummadi
 **Role:** Data & Accessibility Engineer  
 - Designed and populated the **Doctors and Appointments datasets** in DynamoDB.  
 - Developed **data consistency workflows** for doctor availability and appointment synchronization.  
