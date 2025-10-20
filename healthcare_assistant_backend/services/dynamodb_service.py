@@ -3,7 +3,7 @@ from datetime import datetime
 from boto3.dynamodb.conditions import Attr
 
 # Initialize DynamoDB resource
-dynamo = boto3.resource("dynamodb")
+dynamo = boto3.resource("dynamodb", region_name="us-east-1")
 table = dynamo.Table("Appointments")
 
 def book_appointment(doctor, date, time, user_id="guest"):
